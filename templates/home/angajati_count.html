@@ -1,0 +1,34 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <p>total angajati: {{ numar_angajati }}</p>
+    </br>
+    <table class="table table-dark table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nume</th>
+            <th scope="col">Varsta</th>
+            <th scope="col">CNP</th>
+            <th scope="col">telefon</th>
+            <th scope="col">mail</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for angajat in lista_angajati %}
+        <tr>
+
+            <td>{{ angajat.id }}</td>
+            <td>{{ angajat.nume }}</td>
+            <td>{{ angajat.varsta }}</td>
+            <td>{{ angajat.cnp }}</td>
+            <td>{{ angajat.telefon }}</td>
+            <td>{{ angajat.mail }}</td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+

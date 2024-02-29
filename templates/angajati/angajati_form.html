@@ -1,0 +1,11 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <input type="submit" value="Save data" class="btn btn-primary">
+    </form>
+    <a href="{% url 'angajati' %}"  class="btn btn-primary">Go to all angajati</a>
+
+{% endblock %}

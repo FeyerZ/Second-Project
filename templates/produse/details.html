@@ -1,0 +1,17 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Nume produs: {{ object.nume }}</h5>
+            <p class="card-text">Pret: {{ object.pret }}.</p>
+            <p class="card-text">Descriere: {{ object.descriere }}.</p>
+            <p class="card-text">Greutate: {{ object.greutate }}.</p>
+            <p class="card-text">Disponibilitate: {{ object.is_available }}.</p>
+            <p class="card-text">Caregorie: {{ object.categorie.nume }}.</p>
+            <a href="{% url 'all-products' %}" class="btn btn-primary">Go to all</a>
+        </div>
+    </div>
+
+     <a href="{% url 'all-products' %}" type="button" class="btn btn-primary">Add Product</a>
+{% endblock %}

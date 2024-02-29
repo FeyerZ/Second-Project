@@ -1,0 +1,41 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nume</th>
+            <th scope="col">Pret</th>
+            <th scope="col">Descriere</th>
+            <th scope="col">Greutate</th>
+            <th scope="col">Disponibilitate</th>
+            <th scope="col">Categorie</th>
+            <th scope="col">Show details</th>
+            <th scope="col">Delete product</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for produs in object_list %}
+            <tr>
+
+                <td>{{ produs.id }}</td>
+                <td>{{ produs.nume }}</td>
+                <td>{{ produs.pret }}</td>
+                <td>{{ produs.descriere }}</td>
+                <td>{{ produs.greutate }}</td>
+                <td>{{ produs.is_available }}</td>
+                <td>{{ produs.categorie.nume }}</td>
+                <td><a href="{% url 'detail-products' produs.id %}" class="btn btn-primary" >Show</a></td>
+                <td><a href="{% url 'update-products' produs.id %}" class="btn btn-primary" >Update</a></td>
+                <td><a href="{% url 'delete-products' produs.id %}" class="btn btn-primary" >Delete</a></td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+    <a href="{% url 'add-products' %}" type="button" class="btn btn-primary">Add Product</a>
+{% endblock %}

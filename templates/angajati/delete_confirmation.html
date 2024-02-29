@@ -1,0 +1,11 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            Sunteti siguri ca doriti sa stergeti angajatul cu numele: {{ object.nume }} din baza de date?
+        </p>
+        <input type="submit" value="Submit" class="btn btn-danger">
+    </form>
+{% endblock %}

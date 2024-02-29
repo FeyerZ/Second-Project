@@ -1,0 +1,14 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">NUme angajat {{ object.nume }}</h5>
+            <p class="card-text">Varsta angajat: {{ object.varsta }}.</p>
+            <p class="card-text">CNP angajat: {{ object.cnp }}.</p>
+            <p class="card-text">Telefon angajat: {{ object.telefon }}.</p>
+            <p class="card-text">Mail angajat: {{ object.mail }}.</p>
+            <a href="{% url 'angajati' %}" class="btn btn-primary">Go to all</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'layout/base.html' %}
+{% block content %}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nume</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for angajat in angajati_din_db %}
+            <tr>
+                <td>{{ angajat.id }}</td>
+                <td>{{ angajat.nume }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'angajati-add' %}" type="button" class="btn btn-primary">Add Angajat</a>
+      
+{% endblock %}
